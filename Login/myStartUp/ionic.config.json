@@ -1,0 +1,7 @@
+{
+  "name": "myStartUp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

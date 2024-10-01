@@ -1,0 +1,49 @@
+<ion-content class ="custom-content">
+  <ion-card class = "custom-card">
+    <ion-card-header class = "custom-card-header">
+        <ion-icon name="person-circle-outline" class="login-icon" color="danger"></ion-icon>
+      <ion-card-title class="custom-card-title">Login</ion-card-title>
+      <ion-card-subtitle class="custom-card-subtitle">Te estamos esperando!</ion-card-subtitle>
+    </ion-card-header>
+    
+    <ion-card-content>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input formControlName="email" type="email"></ion-input>
+          <ion-note color="danger" *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+            Por favor coloque el email registrado.
+          </ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input formControlName="password" type="password"></ion-input>
+          <ion-note color="danger" *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+            Por favor coloque la contraseña correcta.
+          </ion-note>
+        </ion-item>
+        <div *ngIf="loginError" class="error-message">
+          {{ loginError }}
+        </div>
+        <ion-button expand="block" type="submit" color="danger" [disabled]="!loginForm.valid">Iniciar Sesion</ion-button>
+        <ion-note color="danger" *ngIf="!loginForm.valid && formSubmitted">
+        </ion-note>
+        <div class="register-link">
+          <p>¿Todavía no tenes un usuario? <a routerLink="/register" color="Dark">Ingresa aquí</a></p>
+        </div>
+      </form>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Leyenda y enlaces a redes sociales -->
+  <div class="social-media-container">
+    <p class="social-media-text">Seguinos en:</p>
+    <div class="social-media-icons">
+      <ion-icon name="logo-x" (click)="openSocial('https://twitter.com')" aria-label="X (Twitter)" title="Twitter"></ion-icon>
+      <ion-icon name="logo-instagram" (click)="openSocial('https://instagram.com')" aria-label="Instagram" title="Instagram"></ion-icon>
+      <ion-icon name="logo-facebook" (click)="openSocial('https://facebook.com')" aria-label="Facebook" title="Facebook"></ion-icon>
+    </div>
+  </div>
+</ion-content>
+
+

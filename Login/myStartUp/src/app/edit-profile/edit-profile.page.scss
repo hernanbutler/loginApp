@@ -1,0 +1,48 @@
+ion-content {
+    display: flex;              /* Usar Flexbox para centrar contenido */
+    justify-content: center;    /* Centrar horizontalmente */
+    align-items: center;        /* Centrar verticalmente si es necesario */
+    padding: 0 16px;            /* Márgenes laterales iguales */
+    box-sizing: border-box;     /* Asegura que el padding no afecte el ancho total */
+    height: 100%;               /* Asegura que el ion-content ocupe toda la altura */
+}
+  
+  .custom-card {
+    width: 98%;
+    max-width: 400px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin: 14px 0;  
+  }
+  
+  .custom-item {
+    margin-bottom: 12px;
+  }
+  
+  ion-button {
+    margin-top: 20px;
+    --padding-start: 20px;
+    --padding-end: 20px;
+  }
+  
+  .welcome-message {
+    font-size: 20px;      /* Tamaño de fuente más grande para destacarlo */
+    color: #666;            /* Color del texto */
+    text-align: center;     /* Centra el texto */
+    margin-bottom: 20px;    /* Espaciado inferior para separar del botón */
+  }
+
+  .edit-profile-icon {
+    margin: 16px auto; /* Centra la imagen y añade margen inferior */
+    display: block;
+    width: 40px;              /* Ajusta el tamaño de la imagen */
+    height:40px;             /* Mantiene la proporción cuadrada */
+    }
+
+    .custom-back-button::part(native) {
+      color: #666; /* Ajusta esto al mismo color de welcome-message */
+      font-weight: bold; /* O cualquier estilo adicional */
+    }
+  
+    .custom-back-button::part(icon) {
+      color: var(--ion-color-danger); /* Asegura que el icono permanezca en color danger */
+    }

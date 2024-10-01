@@ -1,0 +1,47 @@
+<ion-content class="custom-content">
+  <ion-card class="custom-card">
+    <ion-card-header class="custom-card-header">
+      <ion-icon name="clipboard-outline" class="register-icon" color="danger"></ion-icon>
+      <ion-card-title class="custom-card-title">Registrate</ion-card-title>
+      <ion-card-subtitle class="custom-card-subtitle">Completa los campos requeridos</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+        <ion-item>
+          <ion-label position="floating">Nombre</ion-label>
+          <ion-input formControlName="name"></ion-input>
+          <ion-note color="danger" *ngIf="registerForm.get('name')?.hasError('required') && registerForm.get('name')?.touched">
+            El nombre es requerido.
+          </ion-note>  
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input formControlName="email" type="email"></ion-input>
+          <ion-note color="danger" *ngIf="registerForm.get('email')?.hasError('required') && registerForm.get('email')?.touched">
+            El correo electrónico es requerido.
+          </ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input formControlName="password" type="password"></ion-input>
+          <ion-note color="danger" *ngIf="registerForm.get('password')?.hasError('required') && registerForm.get('password')?.touched">
+            La contraseña es requerida.
+          </ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Confirma tu contraseña</ion-label>
+          <ion-input formControlName="confirmPassword" type="password"></ion-input>
+          <ion-note color="danger" *ngIf="registerForm.get('password')?.hasError('required') && registerForm.get('password')?.touched">
+            Debe confirmar la contraseña.
+          </ion-note>
+        </ion-item>
+        <ion-button expand="block" class="register-button" color="danger" type="submit"[disabled]="!registerForm.valid">Confirma tus datos</ion-button>
+        <ion-note color="danger" *ngIf="registerForm.invalid && formSubmitted">
+        </ion-note>
+        <div class="login-link">
+          <p>¿Ya tienes una cuenta? <a routerLink='/login'color="Dark">Regresa a login</a></p>
+        </div>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

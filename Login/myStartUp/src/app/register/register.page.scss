@@ -1,0 +1,77 @@
+.custom-content {
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  height: 100vh;           
+  padding: 20px;           
+}
+
+.custom-card {
+  width: 95%;              
+  max-width: 400px;        
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+  border-radius: 12px;     
+}
+
+.custom-card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 16px 0;
+  background-color: #f8f9fa; 
+  border-bottom: 1px solid #ddd; 
+}
+
+.register-icon {
+  display: block; 
+  width: 70px;              
+  height: 70px;             
+}
+
+.custom-card-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333; 
+  margin: 10px 0;
+}
+
+.custom-card-subtitle {
+  font-size: 16px;
+  color: var(--ion-color-medium); 
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+ion-item {
+  margin-bottom: 5px; 
+}
+
+.register-button {
+  margin-top: 20px; 
+}
+
+.error-message {
+  color: var(--ion-color-danger);
+  margin-bottom: 20px; 
+}
+
+.login-link {
+  text-align: center; 
+  margin-top: 10px; 
+}
+
+.login-link a {
+  color: var(--ion-color-primary); 
+  font-weight: bold;
+}
+
+ion-note {
+  display: block;  
+  text-align: center;  
+  margin: 2px;    
+}
